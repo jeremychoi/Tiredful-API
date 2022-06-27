@@ -1,0 +1,25 @@
+openapi: 3.0.0
+servers:
+  - url: 'http://target.com/api/v1'
+info:
+  description: >-
+    This is a sample and simple OpenAPI example for a presentation at Red Hat QEcamp.
+  version: 1.0.0
+  title: OpenAPI for SQL injection
+paths:
+  /activities/:
+    post:
+      requestBody:
+        description: 'test SQLi'
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                month:
+                  type: string
+                  example:
+                    1
+      responses:
+        '200':
+          description: successful operation
